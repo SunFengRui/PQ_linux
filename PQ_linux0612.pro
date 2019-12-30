@@ -6,7 +6,6 @@
 
 QT       += core gui
 QT += charts
-
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = PQ_linux0612
@@ -28,6 +27,7 @@ CONFIG += c++11
 SOURCES += \
         V_Dip_Swell_Interrupt.cpp \
         data.cpp \
+        dlist.cpp \
         main.cpp \
         net_init.cpp \
         pq_linux.cpp \
@@ -37,6 +37,7 @@ SOURCES += \
 
 HEADERS += \
         data.h \
+        dlist.h \
         main.h \
         net_init.h \
         pq_linux.h \

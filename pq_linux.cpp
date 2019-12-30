@@ -260,7 +260,8 @@ static char total_time[100];
 static int day, hour, minute, sec;
 
 extern short output1,output2;
-
+extern DList *list_f;
+double f_array[10];
 void pq_linux::update(void)
 {
     double active_power_meter_tmp, reactive_power_meter_tmp;
@@ -321,7 +322,43 @@ void pq_linux::update(void)
     ui->index_a->setText(tempStr.setNum(an_buffer_idx_A));
     ui->index_b->setText(tempStr.setNum(an_buffer_idx_B));
     ui->index_c->setText(tempStr.setNum(an_buffer_idx_C));
+    {
 
+        static double test_data = 50.0;
+            test_data = test_data + 0.01;
+            ChangeData(list_f, test_data);
+
+                struct node *temp = list_f->head;
+                for (int i = 0; i < list_f->len; i++)
+                {
+                    f_array[i] = temp->data;
+                    temp = temp->next;
+                }
+
+                sprintf(tmp, "%.3f", f_array[0]);
+                data_view->setItem(0, 0, new QStandardItem(tmp));
+                sprintf(tmp, "%.3f", f_array[1]);
+                data_view->setItem(1, 0, new QStandardItem(tmp));
+                sprintf(tmp, "%.3f", f_array[2]);
+                data_view->setItem(2, 0, new QStandardItem(tmp));
+                sprintf(tmp, "%.3f", f_array[3]);
+                data_view->setItem(3, 0, new QStandardItem(tmp));
+                sprintf(tmp, "%.3f", f_array[4]);
+                data_view->setItem(4, 0, new QStandardItem(tmp));
+                sprintf(tmp, "%.3f", f_array[5]);
+                data_view->setItem(5, 0, new QStandardItem(tmp));
+                sprintf(tmp, "%.3f", f_array[6]);
+                data_view->setItem(6, 0, new QStandardItem(tmp));
+                sprintf(tmp, "%.3f", f_array[7]);
+                data_view->setItem(7, 0, new QStandardItem(tmp));
+                sprintf(tmp, "%.3f", f_array[8]);
+                data_view->setItem(8, 0, new QStandardItem(tmp));
+                sprintf(tmp, "%.3f", f_array[9]);
+                data_view->setItem(9, 0, new QStandardItem(tmp));
+
+                data_view->setItem(0, 1, new QStandardItem("3"));
+
+    }
 
     //
     {

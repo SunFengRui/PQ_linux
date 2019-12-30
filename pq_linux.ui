@@ -100,7 +100,7 @@
     </rect>
    </property>
    <property name="currentIndex">
-    <number>0</number>
+    <number>8</number>
    </property>
    <widget class="QWidget" name="tab">
     <attribute name="title">
@@ -3786,8 +3786,8 @@
     <widget class="QTableView" name="tableView">
      <property name="geometry">
       <rect>
-       <x>170</x>
-       <y>90</y>
+       <x>100</x>
+       <y>80</y>
        <width>601</width>
        <height>321</height>
       </rect>

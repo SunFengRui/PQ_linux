@@ -3,7 +3,7 @@
 
 #include <semaphore.h>
 #include <stdio.h>
-
+#include "dlist.h"
 extern struct tm *Start_time;
 extern time_t start_time;
 extern char start_time_s[200];
@@ -17,4 +17,5 @@ extern sem_t data_send_sem;
 extern long cpu_num;
 extern FILE *fp;
 extern int index_800;
+extern DList *list_f;
 #endif // MAIN_H

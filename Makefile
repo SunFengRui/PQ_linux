@@ -54,6 +54,7 @@ OBJECTS_DIR   = ./
 
 SOURCES       = V_Dip_Swell_Interrupt.cpp \
 		data.cpp \
+		dlist.cpp \
 		main.cpp \
 		net_init.cpp \
 		pq_linux.cpp \
@@ -62,6 +63,7 @@ SOURCES       = V_Dip_Swell_Interrupt.cpp \
 		workthread.cpp moc_pq_linux.cpp
 OBJECTS       = V_Dip_Swell_Interrupt.o \
 		data.o \
+		dlist.o \
 		main.o \
 		net_init.o \
 		pq_linux.o \
@@ -243,6 +245,7 @@ DIST          = ../../../../software/Qt5.12.3/5.12.3/gcc_64/mkspecs/features/spe
 		../../../../software/Qt5.12.3/5.12.3/gcc_64/mkspecs/features/yacc.prf \
 		../../../../software/Qt5.12.3/5.12.3/gcc_64/mkspecs/features/lex.prf \
 		PQ_linux0612.pro data.h \
+		dlist.h \
 		main.h \
 		net_init.h \
 		pq_linux.h \
@@ -250,6 +253,7 @@ DIST          = ../../../../software/Qt5.12.3/5.12.3/gcc_64/mkspecs/features/spe
 		tool.h \
 		workthread.h V_Dip_Swell_Interrupt.cpp \
 		data.cpp \
+		dlist.cpp \
 		main.cpp \
 		net_init.cpp \
 		pq_linux.cpp \
@@ -639,8 +643,8 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents ../../../../software/Qt5.12.3/5.12.3/gcc_64/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents data.h main.h net_init.h pq_linux.h socket_send.h tool.h workthread.h $(DISTDIR)/
-	$(COPY_FILE) --parents V_Dip_Swell_Interrupt.cpp data.cpp main.cpp net_init.cpp pq_linux.cpp socket_send.cpp tool.cpp workthread.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents data.h dlist.h main.h net_init.h pq_linux.h socket_send.h tool.h workthread.h $(DISTDIR)/
+	$(COPY_FILE) --parents V_Dip_Swell_Interrupt.cpp data.cpp dlist.cpp main.cpp net_init.cpp pq_linux.cpp socket_send.cpp tool.cpp workthread.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents pq_linux.ui $(DISTDIR)/
 
 
@@ -1252,6 +1256,9 @@ V_Dip_Swell_Interrupt.o: V_Dip_Swell_Interrupt.cpp V_Dip_Swell_Interrupt.h \
 
 data.o: data.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o data.o data.cpp
+
+dlist.o: dlist.cpp dlist.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o dlist.o dlist.cpp
 
 main.o: main.cpp pq_linux.h \
 		../../../../software/Qt5.12.3/5.12.3/gcc_64/include/QtWidgets/QWidget \

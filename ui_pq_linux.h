@@ -3871,7 +3871,7 @@ public:
         tab_9->setObjectName(QString::fromUtf8("tab_9"));
         tableView = new QTableView(tab_9);
         tableView->setObjectName(QString::fromUtf8("tableView"));
-        tableView->setGeometry(QRect(170, 90, 601, 321));
+        tableView->setGeometry(QRect(100, 80, 601, 321));
         tabWidget->addTab(tab_9, QString());
         layoutWidget_57 = new QWidget(pq_linux);
         layoutWidget_57->setObjectName(QString::fromUtf8("layoutWidget_57"));
@@ -4067,7 +4067,7 @@ public:
 
         retranslateUi(pq_linux);
 
-        tabWidget->setCurrentIndex(0);
+        tabWidget->setCurrentIndex(8);
 
 
         QMetaObject::connectSlotsByName(pq_linux);

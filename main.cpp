@@ -109,14 +109,16 @@ void os_create(void)
     pthread_create(&handleSocketThread,nullptr,SocketThreadFunc, nullptr);
     threadsum++;
 }
-
-void create_dlist()
+DList *list_f;
+void create_list(int len, double init_val)
 {
-
+    list_f = CreateList();
+        for(int i=0;i<len;i++)
+            InsertList(list_f, init_val);
 }
-void destroy_dlist()
+void distroy_list()
 {
-
+    DelList(list_f);
 }
 int main(int argc, char *argv[])
 {
@@ -126,7 +128,7 @@ int main(int argc, char *argv[])
 
     os_create();
 
-
+    create_list(10,50.0);
     pq_linux w;
     w.show();
 
